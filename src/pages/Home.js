@@ -1,8 +1,10 @@
 const Home = () => {
   return (
-    <main className="main">
-      Home
-    </main>
+    <div className="mainContainer">
+      <main className="main">
+        Home
+      </main>
+    </div>
   )
 }
 
