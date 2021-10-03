@@ -12,8 +12,19 @@ html, body {
   min-height: 100vh;
 }
 .Header {
-  background-color: brown;
-  height: 4rem;
+  height: 17rem;
+  background-image: url(./images/headerBackground.jpeg);
+  background-size: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Header h1 {
+  color: white;
+  font-size: 5rem;
+  padding: 1rem;
+  border: 0.3rem dotted white;
 }
 .Navbar {
   background-color: green;
