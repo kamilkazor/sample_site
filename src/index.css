@@ -17,7 +17,7 @@ html, body {
 .Header {
   height: 17rem;
   background-image: url(./images/headerBackground.jpeg);
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
@@ -43,7 +43,8 @@ html, body {
   list-style-type: none;
 }
 .Navbar li {
-  padding: 0 2rem;
+  font-size: calc(var(--navbarHeight) * 0.4);
+  padding: 0 calc(var(--navbarHeight) * 0.4);
   height: var(--navbarHeight);
   display: flex;
   justify-content: center;
@@ -54,7 +55,13 @@ html, body {
   background-color: var(--alphaWhiteLight);
 }
 .logo {
-  padding: 0 2rem;
+  padding: 0 calc(var(--navbarHeight) * 0.4);
+}
+.hamburger{
+  display: none;
+  font-size: calc(var(--navbarHeight) * 0.7);
+  line-height: calc(var(--navbarHeight) * 0.7);
+  padding: 0 calc(var(--navbarHeight) * 0.1)
 }
 .Footer {
   justify-self: flex-end;
@@ -63,4 +70,16 @@ html, body {
 }
 .main {
   flex: 1;
+}
+
+@media (max-width: 480px) {
+  .Header h1 {
+    font-size: 3rem;
+  }
+  .Navbar ul {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
 }
