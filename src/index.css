@@ -1,4 +1,29 @@
-body {
+:root{
+  font-size: 16px;
+}
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.Header {
+  background-color: brown;
+  height: 4rem;
+}
+.Navbar {
+  background-color: green;
+  height: 3rem;
+}
+.Footer {
+  justify-self: flex-end;
+  background-color: green;
+  height: 3rem;
+}
+.main {
+  flex: 1;
 }
