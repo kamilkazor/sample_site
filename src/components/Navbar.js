@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import logoIcon from "../images/logoIcon.svg"
+
 const Navbar = () => {
   const [hideLinks, setHideLinks] = useState(true);
 
@@ -9,7 +11,7 @@ const Navbar = () => {
 
   return (
     <div className="Navbar">
-      <div className="logo">Logo</div>
+      <div className="logo"><img src={logoIcon} alt="logo"/><span>Sample Site</span></div>
       <div className="hamburger" onClick={hamburgerHandler}>☰</div>
       <ul className={hideLinks ? "hide" : ""}>
         <li>Home</li>

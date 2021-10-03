@@ -60,10 +60,22 @@ html, body {
 }
 .logo {
   height: var(--navbarHeight);
+  margin: 0;
   padding: 0 calc(var(--navbarHeight) * 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.logo img {
+  height: calc(var(--navbarHeight) * 0.6);
+}
+.logo span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 calc(var(--navbarHeight) * 0.1);
+  height: calc(var(--navbarHeight) * 0.6);
+  font-size: calc(var(--navbarHeight) * 0.5);
 }
 .hamburger{
   display: none;
