@@ -38,6 +38,10 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+.sticky {
+  position: fixed;
 }
 .navContainer {
   flex: 1;
@@ -106,7 +110,7 @@ html, body {
   max-width: var(--mainColumnWidth);
   display: flex;
   flex-direction: column;
-  height: 80rem;
+  height: 100rem;
 }
 
 @media (max-width: 600px) {
@@ -129,7 +133,7 @@ html, body {
     justify-content: flex-start;
   }
   .Navbar .hide {
-    height: 0px;
+    display: none;
   }
 }
 @media (max-width: 480px) {
