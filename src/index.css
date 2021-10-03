@@ -2,6 +2,7 @@
   font-size: 16px;
   --navbarHeight: 3rem;
   --darkGreen: hsl(120, 12%, 16%);
+  --lighterGreen: hsl(120, 12%, 32%);
   --alphaWhiteLight: hsla(120, 12%, 100%, 0.2)
 }
 html, body {
@@ -30,17 +31,20 @@ html, body {
   border: 0.3rem dotted white;
 }
 .Navbar {
-  height: var(--navbarHeight);
+  min-height: var(--navbarHeight);
   background-color: var(--darkGreen);
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 .Navbar ul {
   display: flex;
   align-items: center;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 .Navbar li {
   font-size: calc(var(--navbarHeight) * 0.4);
@@ -55,10 +59,15 @@ html, body {
   background-color: var(--alphaWhiteLight);
 }
 .logo {
+  height: var(--navbarHeight);
   padding: 0 calc(var(--navbarHeight) * 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .hamburger{
   display: none;
+  height: var(--navbarHeight);
   font-size: calc(var(--navbarHeight) * 0.7);
   line-height: calc(var(--navbarHeight) * 0.7);
   padding: 0 calc(var(--navbarHeight) * 0.1)
@@ -72,14 +81,28 @@ html, body {
   flex: 1;
 }
 
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Navbar ul {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: var(--lighterGreen);
+  }
+  .Navbar li {
+    justify-content: flex-start;
+  }
+  .Navbar .hide {
+    display: none;
+  }
+}
 @media (max-width: 480px) {
   .Header h1 {
     font-size: 3rem;
-  }
-  .Navbar ul {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
   }
 }
