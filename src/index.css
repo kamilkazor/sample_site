@@ -106,6 +106,7 @@ html, body {
   max-width: var(--mainColumnWidth);
   display: flex;
   flex-direction: column;
+  height: 80rem;
 }
 
 @media (max-width: 600px) {
@@ -115,7 +116,10 @@ html, body {
     align-items: center;
   }
   .Navbar ul {
-    width: 100vw;
+    /* For some reason ul adds empty space on right side on scroll when width is setted
+    to 100vw or %. Adding min width to 90vw and flex to 1 helps to get around it */
+    min-width: 90vw;
+    flex:1;
     display: flex;
     flex-direction: column;
     align-items: stretch;
