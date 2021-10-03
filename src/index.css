@@ -125,7 +125,7 @@ html, body {
     justify-content: flex-start;
   }
   .Navbar .hide {
-    display: none;
+    height: 0px;
   }
 }
 @media (max-width: 480px) {
