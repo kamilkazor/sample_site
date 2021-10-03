@@ -124,6 +124,12 @@ html, body {
 }
 
 @media (max-width: 600px) {
+  .Header {
+    height: 20rem;
+  }
+  .Header h1 {
+    font-size: 4rem;
+  }
   .hamburger {
     display: flex;
     justify-content: center;
@@ -147,6 +153,9 @@ html, body {
   }
 }
 @media (max-width: 480px) {
+  .Header {
+    height: 15rem;
+  }
   .Header h1 {
     font-size: 3rem;
   }
