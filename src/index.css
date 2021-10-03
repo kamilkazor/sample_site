@@ -108,7 +108,11 @@ html, body {
 .Footer {
   justify-self: flex-end;
   background-color: var(--darkGreen);
-  height: 3rem;
+  height: 10rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .mainContainer {
   flex: 1;
