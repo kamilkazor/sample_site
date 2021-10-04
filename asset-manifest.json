@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sample_site/static/css/main.fec3c140.chunk.css",
+    "main.css": "/sample_site/static/css/main.b09a7d03.chunk.css",
     "main.js": "/sample_site/static/js/main.f42c0e70.chunk.js",
     "main.js.map": "/sample_site/static/js/main.f42c0e70.chunk.js.map",
     "runtime-main.js": "/sample_site/static/js/runtime-main.1706b316.js",
@@ -8,7 +8,7 @@
     "static/js/2.c32d3f7b.chunk.js": "/sample_site/static/js/2.c32d3f7b.chunk.js",
     "static/js/2.c32d3f7b.chunk.js.map": "/sample_site/static/js/2.c32d3f7b.chunk.js.map",
     "index.html": "/sample_site/index.html",
-    "static/css/main.fec3c140.chunk.css.map": "/sample_site/static/css/main.fec3c140.chunk.css.map",
+    "static/css/main.b09a7d03.chunk.css.map": "/sample_site/static/css/main.b09a7d03.chunk.css.map",
     "static/js/2.c32d3f7b.chunk.js.LICENSE.txt": "/sample_site/static/js/2.c32d3f7b.chunk.js.LICENSE.txt",
     "static/media/index.css": "/sample_site/static/media/headerBackground.a46e1a2c.jpeg",
     "static/media/logoIcon.ee503aa1.svg": "/sample_site/static/media/logoIcon.ee503aa1.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.1706b316.js",
     "static/js/2.c32d3f7b.chunk.js",
-    "static/css/main.fec3c140.chunk.css",
+    "static/css/main.b09a7d03.chunk.css",
     "static/js/main.f42c0e70.chunk.js"
   ]
 }
