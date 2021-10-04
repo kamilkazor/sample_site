@@ -1,6 +1,6 @@
 import Row from "./Row";
 
-import githubQR from "../images/githubQR.png";
+import githubQR from "../images/githubQR.svg";
 import phoneIcon from "../images/phoneIcon.svg";
 import envelopeIcon from "../images/envelopeIcon.svg";
 
