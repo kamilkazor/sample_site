@@ -103,7 +103,7 @@ html, body {
   height: var(--navbarHeight);
   font-size: calc(var(--navbarHeight) * 0.7);
   line-height: calc(var(--navbarHeight) * 0.7);
-  padding: 0 calc(var(--navbarHeight) * 0.2)
+  padding: 0 calc(var(--navbarHeight) * 0.2);
 }
 .Footer {
   justify-self: flex-end;
@@ -139,6 +139,22 @@ html, body {
     justify-content: center;
     align-items: center;
   }
+  @keyframes showList {
+    from {
+      transform: translateX(100vw);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  @keyframes hideList {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100vw);
+    }
+  }
   .Navbar ul {
     /* For some reason ul adds empty space on right side on scroll when width is setted
     to 100vw or %. Adding min width to 90vw and flex to 1 helps to get around it */
@@ -147,13 +163,26 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-color: var(--lighterGreen);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .Navbar .hide span{
+    transform: translateX(100vw);
+    animation-name: hideList;
+    animation-duration: 1s;
+  }
+  .Navbar .show span{
+    transform: translateX(0);
+    animation-name: showList;
+    animation-duration: 1s;
   }
   .Navbar li {
     justify-content: flex-start;
   }
-  .Navbar .hide {
-    display: none;
+  .Navbar ul span {
+    background-color: var(--lighterGreen);
+    transform: translateX(100vw);
   }
 }
 @media (max-width: 480px) {
