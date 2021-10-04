@@ -16,6 +16,8 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* Header */
 .Header {
   height: 25rem;
   background-image: linear-gradient(hsla(120, 0%, 0%, 0.5),hsla(120, 0%, 0%, 0.5)), url(./images/headerBackground.jpeg);
@@ -32,6 +34,8 @@ html, body {
   padding: 1rem;
   border: 0.3rem dotted white;
 }
+
+/* Sticky navbar */
 .Navbar {
   min-height: var(--navbarHeight);
   color: white;
@@ -73,12 +77,56 @@ html, body {
   height: var(--navbarHeight);
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  align-items: center; 
 }
+
+/* Animated hamburger menu */
 .Navbar li:hover {
   background-color: var(--alphaWhiteLight);
 }
+.menu {
+  display: none;
+}
+.menu .burger {
+  background-color: white;
+  width: 60%;
+  height: 3px;
+  transition: background-color 1s;
+  -webkit-transition: background-color 1s;
+}
+.menu .burger::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 60%;
+  height: 3px;
+  transform:translateY(calc(var(--navbarHeight) * -0.2));
+  transition: transform 1s;
+  -webkit-transition: -webkit-transform 1s;
+}
+.menu .burger::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 60%;
+  height: 3px;
+  transform:translateY(calc(var(--navbarHeight) * 0.2));
+  transition: transform 1s;
+  -webkit-transition: -webkit-transform 1s;
+}
+.menu.open .burger{
+  background-color: transparent;
+}
+.menu.open .burger::before{
+  transform:translateY(0);
+  transform: rotate(45deg);
+}
+.menu.open .burger::after{
+  transform:translateY(0);
+  transform: rotate(-45deg);
+}
+
+/* Navbar logo */
 .logo {
   height: var(--navbarHeight);
   margin: 0;
@@ -98,13 +146,8 @@ html, body {
   height: calc(var(--navbarHeight) * 0.6);
   font-size: calc(var(--navbarHeight) * 0.5);
 }
-.hamburger{
-  display: none;
-  height: var(--navbarHeight);
-  font-size: calc(var(--navbarHeight) * 0.7);
-  line-height: calc(var(--navbarHeight) * 0.7);
-  padding: 0 calc(var(--navbarHeight) * 0.2);
-}
+
+/* Footer */
 .Footer {
   justify-self: flex-end;
   background-color: var(--darkGreen);
@@ -114,6 +157,8 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+
+/* Main content of site */
 .mainContainer {
   flex: 1;
   display: flex;
@@ -127,34 +172,24 @@ html, body {
   height: 100rem;
 }
 
+
+/* Adding style for mobile devices */
 @media (max-width: 600px) {
+  .menu {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--navbarHeight);
+    height: var(--navbarHeight);
+  }
   .Header {
     height: 20rem;
   }
   .Header h1 {
     font-size: 4rem;
   }
-  .hamburger {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  @keyframes showList {
-    from {
-      transform: translateX(100vw);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  @keyframes hideList {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(100vw);
-    }
-  }
+  /* Animated mobile menu */
   .Navbar ul {
     /* For some reason ul adds empty space on right side on scroll when width is setted
     to 100vw or %. Adding min width to 90vw and flex to 1 helps to get around it */
@@ -185,6 +220,24 @@ html, body {
     transform: translateX(100vw);
   }
 }
+@keyframes showList {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes hideList {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+
 @media (max-width: 480px) {
   .Header {
     height: 15rem;
