@@ -2,12 +2,11 @@ import { useEffect, useRef, useState } from "react";
 
 import logoIcon from "../images/logoIcon.svg"
 
-const Navbar = () => {
+const Navbar = ({headerRef}) => {
   const hideLinks = useRef(true);
-  const [linksStyle, setLinksStyle] = useState("");
+  const [linksStyle, setLinksStyle] = useState(""); //Empty string as initial state prevents running animation on first render
   const [sticky, setSticky] = useState(false);
   const navRef = useRef()
-  const initialOffset = useRef(false);
 
   //Hides and shows ul with links on mobile devices
   const hamburgerHandler = () => {
@@ -17,8 +16,8 @@ const Navbar = () => {
 
   //Adds and remover position fixed to Navbar
   const scrollHandler = () => {
-    if(!initialOffset.current) initialOffset.current = navRef.current.offsetTop;
-    window.pageYOffset >= initialOffset.current ? setSticky(true) : setSticky(false);
+    const initialNavOffset = headerRef.current.offsetTop + headerRef.current.clientHeight - navRef.current.clientHeight;
+    window.pageYOffset >= initialNavOffset ? setSticky(true) : setSticky(false);
   }
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
