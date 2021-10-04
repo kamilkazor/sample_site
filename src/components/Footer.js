@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="infoBox">
           <div>
             <h3>Site created by Kamil Kazor</h3>
-            <p>To se more of my works checkout my github:</p>
+            <p>To see more of my works checkout my github:</p>
             <p><a href="https://github.com/kamilkazor">https://github.com/kamilkazor</a></p>
           </div>
           <div className="contact">

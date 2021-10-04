@@ -4,7 +4,8 @@
   --navbarHeight: 3rem;
   --mainColumnWidth : 80rem;
   --darkGreen: hsl(206, 12%, 15%);
-  --lighterGreen: hsl(206, 12%, 39%);
+  --originalGreen: hsl(206, 12%, 39%);
+  --veryLightGreen: hsl(206, 12%, 95%);
   --alphaWhiteLight: hsla(120, 6%, 100%, 0.2);
 }
 html, body {
@@ -180,7 +181,7 @@ html, body {
 .contact > h3 {
   margin: 0;
 }
-.row {
+.Footer .row {
   flex: 1;
   display: flex;
   justify-content: flex-start;
@@ -209,6 +210,42 @@ html, body {
   display: flex;
   flex-direction: column;
   /* height: 100rem; */
+}
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 2rem 0;
+  padding: 0 2rem;
+  background-color: var( --veryLightGreen);
+}
+article h2 {
+  font-size: 2rem;
+  color: var(--darkGreen);
+}
+article p {
+  color: var(--originalGreen);
+  font-weight: bolder;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Home */
+.aboutLogoImg {
+  max-height: 11rem;
+  margin: 2rem;
+}
+.aboutText {
+  width: 17rem;
+  text-align: justify;
 }
 
 
@@ -255,7 +292,7 @@ html, body {
     justify-content: flex-start;
   }
   .Navbar ul span {
-    background-color: var(--lighterGreen);
+    background-color: var(--originalGreen);
     transform: translateX(100vw);
   }
 }

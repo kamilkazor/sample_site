@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-import logoIcon from "../images/logoIcon.svg"
+import logoIcon from "../images/logoIcon.svg";
 
 const Navbar = ({headerRef}) => {
   const hideLinks = useRef(true);
