@@ -17,7 +17,7 @@ const Home = () => {
           <div className="textBox">
             <h2>Responsive design:</h2>
             <p>Flexible layout, sticky navigation bar and animated mobile menu...</p>
-            <p>The site was written the way to provide a nice experience on all devices. Please resize the window or scan the QR Code with your phone to see all the features.</p>
+            <p>The site was written in a way to provide a nice experience on all devices. Please resize the window or scan the QR Code with your phone to see all the features.</p>
           </div>
           <img id="responsiveQR" src={sampleSiteQR} alt="sample site QR code"/>
         </article>
