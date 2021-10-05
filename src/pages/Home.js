@@ -26,8 +26,8 @@ const Home = () => {
           <img id="responsiveQR" src={sampleSiteQR} alt="sample site QR code"/>
         </article>
         <article id="madeWithArticle">
-          <div className="textBox">
             <span id="BG" className="veryLightGreenBG"></span>
+          <div className="textBox">
             <h2>MADE WITH:</h2>
             <div className="row">
               <div className="row">

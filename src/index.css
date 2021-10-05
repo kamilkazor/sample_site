@@ -226,6 +226,7 @@ article {
 article h2 {
   font-size: 2rem;
   color: var(--darkGreen);
+  margin: 0
 }
 article p {
   color: var(--originalGreen);
@@ -268,13 +269,15 @@ article img {
 }
 #BG {
   position: absolute;
-  transform: translate(-50%);
   width: 100%;
   height: calc(100% - 6rem);
   z-index: -1;
 }
 #madeWithArticle .textBox {
   text-align: center;
+}
+#madeWithArticle h2 {
+  margin-bottom: 1rem;
 }
 #madeWithArticle .iconCard {
   width: 6.5rem;
