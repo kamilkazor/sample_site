@@ -6,7 +6,7 @@ import envelopeIcon from "../images/envelopeIcon.svg";
 
 const Footer = () => {
   return (
-    <footer className="Footer">
+    <footer id="Footer">
       <div className="footerContent">
         <img className="githubQR" src={githubQR} alt="github QR Code"/>
         <div className="infoBox">

@@ -20,7 +20,7 @@ html, body {
 }
 
 /* Header */
-.Header {
+#Header {
   height: 25rem;
   background-image: linear-gradient(hsla(120, 0%, 0%, 0.5),hsla(120, 0%, 0%, 0.5)), url(./images/headerBackground.jpeg);
   background-size: cover;
@@ -30,7 +30,7 @@ html, body {
   justify-content: center;
   align-items: center;
 }
-.Header h1 {
+#Header h1 {
   color: white;
   font-size: 5rem;
   padding: 1rem;
@@ -38,7 +38,7 @@ html, body {
 }
 
 /* Sticky navbar */
-.Navbar {
+#Navbar {
   min-height: var(--navbarHeight);
   color: white;
   background-color: transparent;
@@ -53,9 +53,9 @@ html, body {
   z-index: 1000;
 }
 .sticky {
-  position: fixed;
-  bottom: auto;
-  background-color: var(--darkGreen);
+  position: fixed !important; 
+  bottom: auto !important;
+  background-color: var(--darkGreen) !important;
 }
 .navContainer {
   flex: 1;
@@ -65,7 +65,7 @@ html, body {
   height: var(--navbarHeight);
   max-width: var(--mainColumnWidth);
 }
-.Navbar ul {
+#Navbar ul {
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -73,7 +73,7 @@ html, body {
   padding: 0;
   background-color: transparent;
 }
-.Navbar li {
+#Navbar li {
   font-size: calc(var(--navbarHeight) * 0.4);
   padding: 0 calc(var(--navbarHeight) * 0.4);
   height: var(--navbarHeight);
@@ -83,7 +83,7 @@ html, body {
 }
 
 /* Animated hamburger menu */
-.Navbar li:hover {
+#Navbar li:hover {
   background-color: var(--alphaWhiteLight);
 }
 .menu {
@@ -150,7 +150,7 @@ html, body {
 }
 
 /* Footer */
-.Footer {
+#Footer {
   justify-self: flex-end;
   background-color: var(--darkGreen);
   min-height: 20rem;
@@ -159,10 +159,10 @@ html, body {
   justify-content: center;
   align-items: center;
 }
-.Footer a {
+#Footer a {
   color: white;
 }
-.Footer h3 {
+#Footer h3 {
   margin: 1rem 0;
 }
 .footerContent {
@@ -181,7 +181,7 @@ html, body {
 .contact > h3 {
   margin: 0;
 }
-.Footer .row {
+#Footer .row {
   flex: 1;
   display: flex;
   justify-content: flex-start;
@@ -267,14 +267,14 @@ article img {
     width: var(--navbarHeight);
     height: var(--navbarHeight);
   }
-  .Header {
+  #Header {
     height: 20rem;
   }
-  .Header h1 {
+  #Header h1 {
     font-size: 4rem;
   }
   /* Animated mobile menu */
-  .Navbar ul {
+  #Navbar ul {
     /* For some reason ul adds empty space on right side on scroll when width is setted
     to 100vw or %. Adding min width to 90vw and flex to 1 helps to get around it */
     min-width: 90vw;
@@ -286,20 +286,20 @@ article img {
     overflow-x: hidden;
     overflow-y: hidden;
   }
-  .Navbar .hide span{
+  #Navbar .hide span{
     transform: translateX(100vw);
     animation-name: hideList;
     animation-duration: 0.5s;
   }
-  .Navbar .show span{
+  #Navbar .show span{
     transform: translateX(0);
     animation-name: showList;
     animation-duration: 0.5s;
   }
-  .Navbar li {
+  #Navbar li {
     justify-content: flex-start;
   }
-  .Navbar ul span {
+  #Navbar ul span {
     background-color: var(--originalGreen);
     transform: translateX(100vw);
   }
@@ -323,10 +323,10 @@ article img {
 
 
 @media (max-width: 480px) {
-  .Header {
+  #Header {
     height: 15rem;
   }
-  .Header h1 {
+  #Header h1 {
     font-size: 3rem;
   }
 }

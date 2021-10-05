@@ -28,7 +28,7 @@ const Navbar = ({headerRef}) => {
 
 
   return (
-    <nav className={sticky ? "Navbar sticky" : "Navbar"} ref={navRef}>
+    <nav id="Navbar" className={sticky ? "sticky" : ""} ref={navRef}>
       <div className="navContainer">
       <div className="logo"><img src={logoIcon} alt="logo"/><span>Sample Site</span></div>
       <div onClick={burgerHandler} className={burgerOpen ? "menu open" : "menu"}>
