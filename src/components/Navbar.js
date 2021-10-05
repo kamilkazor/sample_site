@@ -37,16 +37,16 @@ const Navbar = ({headerRef}) => {
       </div>
       <ul className={linksStyle}>
         <Link to="/">
-          <li>Home</li>
+          <li onClick={burgerHandler}>Home</li>
         </Link>
         <Link to="/Link1">
-          <li>link1</li>
+          <li onClick={burgerHandler}>link1</li>
         </Link>
         <Link to="/Link2">
-          <li>link2</li>
+          <li onClick={burgerHandler}>link2</li>
         </Link>
         <Link to="/Link3">
-          <li>link3</li>
+          <li onClick={burgerHandler}>link3</li>
         </Link>
       </ul>
       </div>
