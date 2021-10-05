@@ -113,8 +113,8 @@ html, body {
   width: 60%;
   height: 3px;
   transform:translateY(calc(var(--navbarHeight) * 0.2));
-  transition: transform 1s;
-  -webkit-transition: -webkit-transform 1s;
+  transition: transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
 }
 .menu.open .burger{
   background-color: transparent;
@@ -289,12 +289,12 @@ article img {
   .Navbar .hide span{
     transform: translateX(100vw);
     animation-name: hideList;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
   }
   .Navbar .show span{
     transform: translateX(0);
     animation-name: showList;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
   }
   .Navbar li {
     justify-content: flex-start;
