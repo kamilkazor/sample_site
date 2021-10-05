@@ -73,7 +73,11 @@ html, body {
   padding: 0;
   background-color: transparent;
 }
+#Navbar ul a {
+  text-decoration: none;
+}
 #Navbar li {
+  color: white;
   font-size: calc(var(--navbarHeight) * 0.4);
   padding: 0 calc(var(--navbarHeight) * 0.4);
   height: var(--navbarHeight);
@@ -316,12 +320,12 @@ article img {
     overflow-x: hidden;
     overflow-y: hidden;
   }
-  #Navbar .hide span{
+  #Navbar .hide a{
     transform: translateX(100vw);
     animation-name: hideList;
     animation-duration: 0.5s;
   }
-  #Navbar .show span{
+  #Navbar .show a{
     transform: translateX(0);
     animation-name: showList;
     animation-duration: 0.5s;
@@ -329,7 +333,7 @@ article img {
   #Navbar li {
     justify-content: flex-start;
   }
-  #Navbar ul span {
+  #Navbar ul a {
     background-color: var(--originalGreen);
     transform: translateX(100vw);
   }

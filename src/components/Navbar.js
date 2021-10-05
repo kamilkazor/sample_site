@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 import logoIcon from "../images/logoIcon.svg";
 
@@ -35,10 +36,18 @@ const Navbar = ({headerRef}) => {
         <div className="burger"></div>
       </div>
       <ul className={linksStyle}>
-        <span><li>Home</li></span>
-        <span><li>link1</li></span>
-        <span><li>link2</li></span>
-        <span><li>link3</li></span>
+        <Link to="/">
+          <li>Home</li>
+        </Link>
+        <Link to="/Link1">
+          <li>link1</li>
+        </Link>
+        <Link to="/Link2">
+          <li>link2</li>
+        </Link>
+        <Link to="/Link3">
+          <li>link3</li>
+        </Link>
       </ul>
       </div>
     </nav>
