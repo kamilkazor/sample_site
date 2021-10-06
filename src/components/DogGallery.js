@@ -6,11 +6,19 @@ const DogGallery =() => {
   const galleryLength = useRef(0);
   const [imagesToShow, setImagesToShow] = useState([]);
   const [showFrom, setShowFrom] = useState(0);
-  const showLimit = 21;
+  const showLimit = 12;
 
   const nextPageHandler = () => {
     if(showFrom + showLimit < galleryLength.current){
-      setShowFrom(showFrom + showLimit)
+      setShowFrom(showFrom + showLimit);
+    }
+  }
+  const prevPageHandler = () => {
+    if(showFrom > 0 + showLimit){
+      setShowFrom(showFrom - showLimit);
+    }
+    else {
+      setShowFrom(0);
     }
   }
 
@@ -31,7 +39,10 @@ const DogGallery =() => {
 
   return (
     <div>
-      <button onClick={nextPageHandler}>next</button>
+      <div className="row">
+      <button onClick={prevPageHandler}>prev</button>
+        <button onClick={nextPageHandler}>next</button>
+      </div>
       <div className="row">
         {imagesToShow}
       </div>
