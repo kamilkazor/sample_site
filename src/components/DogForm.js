@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setBreedsData } from "../redux/dogSlice";
+import { setBreedsData, setImagesData } from "../redux/dogSlice";
 
 const DogForm = () => {
   const breedsData = useSelector((store) => store.dog.breedsData);
@@ -55,7 +55,6 @@ const DogForm = () => {
     else{
       url = `https://dog.ceo/api/breed/${selectedBreed}/${selectedSubBreed}/images`;
     }
-    console.log(url);
     fetch(url)
     .then((res) => {
       if(res.ok){
@@ -66,12 +65,12 @@ const DogForm = () => {
       }
     })
     .then((data) => {
-      console.log(data)
+      dispatch(setImagesData([...data.message]));
     })
     .catch((err) => {
       console.log(err);
     })
-  }
+  };
 
 
   return (
