@@ -13,43 +13,27 @@ const DogForm = () => {
   const [selectedSubBreed, setSelectedSubBreed] = useState("all");
   const [subBreedDisabled, setSubBreedDisabled] = useState(true);
 
-  //Fetching avaliable breeds form Dog API 
-  useEffect(() => {
-    fetch('https://dog.ceo/api/breeds/list/all')
-      .then((res) => {
-        if(res.ok){
-          return res.json();
-        }
-        else{
-          throw Error;
-        }
-      })
-      .then((data) => {
-        dispatch(setBreedsData({...data.message}));
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  },[]);
+
   //Setting avaliable options for select inputs
   useEffect(() => {
     setBreeds(["all", ...Object.keys(breedsData)]);
   },[breedsData]);
   useEffect(() => {
     setSelectedSubBreed("all")
-    selectedBreed == "all" ? setSubBreeds(["all"]) : setSubBreeds(["all", ...breedsData[selectedBreed]]);
+    selectedBreed === "all" ? setSubBreeds(["all"]) : setSubBreeds(["all", ...breedsData[selectedBreed]]);
   },[selectedBreed]);
   useEffect(() => {
     subBreeds.length > 1 ? setSubBreedDisabled(false) : setSubBreedDisabled(true);
   },[subBreeds]);
-
-  const submitHandler = (event) => {
-    event.preventDefault();
+  
+  
+  //Creating proper url and fetching avaliable breeds
+  const fetchImagesData = () => {
     let url = "";
-    if(selectedBreed == "all"){
+    if(selectedBreed === "all"){
       url = "https://dog.ceo/api/breeds/image/random/50";
     }
-    else if(selectedSubBreed == "all"){
+    else if(selectedSubBreed === "all"){
       url = `https://dog.ceo/api/breed/${selectedBreed}/images`;
     }
     else{
@@ -70,6 +54,31 @@ const DogForm = () => {
     .catch((err) => {
       console.log(err);
     })
+  }
+  //Fetching avaliable breeds form Dog API and random images on component first render
+  useEffect(() => {
+    fetchImagesData();
+    fetch('https://dog.ceo/api/breeds/list/all')
+    .then((res) => {
+      if(res.ok){
+        return res.json();
+      }
+      else{
+        throw Error;
+      }
+    })
+    .then((data) => {
+      dispatch(setBreedsData({...data.message}));
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  },[]);
+
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    fetchImagesData();
   };
 
 
