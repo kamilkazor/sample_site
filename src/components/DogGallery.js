@@ -22,8 +22,17 @@ const DogGallery =() => {
     }
   }
 
-  const prepareImages = (urls) => {
-    setImagesToShow(urls.map((imageSrc) => <img className="dogImg" key={imageSrc} src={imageSrc}/>))
+  const prepareImages = (srcs) => {
+    const images = srcs.map((imageSrc) => {
+      return(
+        <a href={imageSrc} target="_blank" key={imageSrc}>
+          <div className="imageCard">
+            <img className="dogImg" src={imageSrc}/>
+          </div>
+        </a>
+      )
+    })
+    setImagesToShow(images)
   }
 
   useEffect(() => {
