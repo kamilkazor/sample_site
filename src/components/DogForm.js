@@ -8,7 +8,7 @@ const DogForm = () => {
   const dispatch = useDispatch();
 
   const [breeds, setBreeds] = useState([]);
-  const [selectedBreed, setSelectedBreed] = useState("all");
+  const [selectedBreed, setSelectedBreed] = useState("random 50");
   const [subBreeds, setSubBreeds] = useState([]);
   const [selectedSubBreed, setSelectedSubBreed] = useState("all");
   const [subBreedDisabled, setSubBreedDisabled] = useState(true);
@@ -16,11 +16,11 @@ const DogForm = () => {
 
   //Setting avaliable options for select inputs
   useEffect(() => {
-    setBreeds(["all", ...Object.keys(breedsData)]);
+    setBreeds(["random 50", ...Object.keys(breedsData)]);
   },[breedsData]);
   useEffect(() => {
     setSelectedSubBreed("all")
-    selectedBreed === "all" ? setSubBreeds(["all"]) : setSubBreeds(["all", ...breedsData[selectedBreed]]);
+    selectedBreed === "random 50" ? setSubBreeds(["all"]) : setSubBreeds(["all", ...breedsData[selectedBreed]]);
   },[selectedBreed]);
   useEffect(() => {
     subBreeds.length > 1 ? setSubBreedDisabled(false) : setSubBreedDisabled(true);
@@ -30,7 +30,7 @@ const DogForm = () => {
   //Creating proper url and fetching avaliable breeds
   const fetchImagesData = () => {
     let url = "";
-    if(selectedBreed === "all"){
+    if(selectedBreed === "random 50"){
       url = "https://dog.ceo/api/breeds/image/random/50";
     }
     else if(selectedSubBreed === "all"){
