@@ -43,11 +43,40 @@ const DogForm = () => {
     subBreeds.length > 1 ? setSubBreedDisabled(false) : setSubBreedDisabled(true);
   },[subBreeds]);
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    let url = "";
+    if(selectedBreed == "all"){
+      url = "https://dog.ceo/api/breeds/image/random/50";
+    }
+    else if(selectedSubBreed == "all"){
+      url = `https://dog.ceo/api/breed/${selectedBreed}/images`;
+    }
+    else{
+      url = `https://dog.ceo/api/breed/${selectedBreed}/${selectedSubBreed}/images`;
+    }
+    console.log(url);
+    fetch(url)
+    .then((res) => {
+      if(res.ok){
+        return res.json();
+      }
+      else{
+        throw Error;
+      }
+    })
+    .then((data) => {
+      console.log(data)
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
 
 
   return (
     <div>
-      <form>
+      <form onSubmit={submitHandler}>
         <label htmlFor="breed">breed: </label>
         <select 
         id="breed" 
@@ -61,11 +90,12 @@ const DogForm = () => {
         <select 
         id="subBreed" 
         name="subBreed" 
-        value={selectedSubBreed} onChange={(e) => {setSelectedSubBreed(e.target.value)}}
+        value={selectedSubBreed} onChange={(event) => {setSelectedSubBreed(event.target.value)}}
         disabled={subBreedDisabled}
         >
           {subBreeds.map((subBreed) => <option key={subBreed} value={subBreed}>{subBreed}</option>)}
         </select>
+        <input type="submit" value="search"/>
       </form>
     </div>
   );
