@@ -294,8 +294,11 @@ article img {
 }
 
 /* Dog API */
+#dogGallery {
+  padding: 1rem;
+}
 .dogImg {
-  width: 18rem;
+  width: 13rem;
   height: auto;
 }
 .imgRow {
@@ -308,7 +311,6 @@ article img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* justify-content: space-between; */
 }
 
 

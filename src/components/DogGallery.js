@@ -82,7 +82,7 @@ const DogGallery =() => {
   },[showFrom])
 
   return (
-    <div>
+    <div id="dogGallery">
       <div className="row">
         <button onClick={prevPageHandler}>prev</button>
         <button onClick={nextPageHandler}>next</button>
