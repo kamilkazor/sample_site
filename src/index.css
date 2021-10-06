@@ -293,6 +293,11 @@ article img {
   width: 100%;
 }
 
+/* Dog API */
+.dogImg {
+  max-width: 15rem;
+}
+
 
 /* Adding style for mobile devices */
 @media (max-width: 600px) {
