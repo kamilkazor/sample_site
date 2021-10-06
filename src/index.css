@@ -294,21 +294,21 @@ article img {
 }
 
 /* Dog API */
-.imageCard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 16rem;
-  height: 16rem;
-  background-color: white;
-  margin: 1rem;
-  padding: 1rem;
-}
 .dogImg {
-  max-width: 14rem;
-  max-height: 14rem;
-  display: block;
-  margin: auto;
+  width: 15rem;
+  height: auto;
+}
+.imgRow {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.imgCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 
