@@ -6,6 +6,8 @@ const DogGallery =() => {
   const galleryLength = useRef(0);
   const [imagesToShow, setImagesToShow] = useState(null);
   const [showFrom, setShowFrom] = useState(0);
+  const [isNextPage, setIsNextPage] =useState(false);
+  const [isPrevPage, setIsPrevPage] =useState(false);
   const showLimit = 60;
 
   const nextPageHandler = () => {
@@ -84,8 +86,8 @@ const DogGallery =() => {
   return (
     <div id="dogGallery">
       <div className="row">
-        <button onClick={prevPageHandler}>prev</button>
-        <button onClick={nextPageHandler}>next</button>
+        <button className="pageButton" onClick={prevPageHandler}>&lt;</button>
+        <button className="pageButton" onClick={nextPageHandler}>&gt;</button>
       </div>
         {imagesToShow}
       <div className="row">

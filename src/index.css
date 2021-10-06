@@ -312,6 +312,11 @@ article img {
   flex-direction: column;
   justify-content: space-between;
 }
+.pageButton {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+}
 
 
 /* Adding style for mobile devices */
