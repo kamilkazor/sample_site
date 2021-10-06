@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import dogReducer from "./dogSlice";
 
 const store = configureStore({
-  reducer: {}
+  reducer: {
+    dog: dogReducer
+  }
 })
 
 export default store;
