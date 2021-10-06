@@ -33,15 +33,38 @@ const DogGallery =() => {
     }
     const preparedImages = (
       <div className="imgRow">
-        {cols.map((col, index) => (
-          <div className="imgCol" key={`col${index}`}>
-            {col.map((imageSrc) => (
+        <div className="imgRow">
+          <div className="imgCol" key="col1">
+            {cols[0].map((imageSrc) => (
               <a href={imageSrc} target="_blank" rel="noreferrer" key={imageSrc}>
                 <img className="dogImg" src={imageSrc} alt=""/>
               </a>
             ))}
           </div>
-        ))}
+          <div className="imgCol" key="col2">
+            {cols[1].map((imageSrc) => (
+              <a href={imageSrc} target="_blank" rel="noreferrer" key={imageSrc}>
+                <img className="dogImg" src={imageSrc} alt=""/>
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="imgRow">
+          <div className="imgCol" key="col3">
+            {cols[2].map((imageSrc) => (
+              <a href={imageSrc} target="_blank" rel="noreferrer" key={imageSrc}>
+                <img className="dogImg" src={imageSrc} alt=""/>
+              </a>
+            ))}
+          </div>
+          <div className="imgCol" key="col4">
+            {cols[3].map((imageSrc) => (
+              <a href={imageSrc} target="_blank" rel="noreferrer" key={imageSrc}>
+                <img className="dogImg" src={imageSrc} alt=""/>
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     )
     setImagesToShow(preparedImages)
