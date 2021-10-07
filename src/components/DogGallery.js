@@ -93,7 +93,7 @@ const DogGallery =() => {
   },[imagesToShow])
 
   return (
-    <div id="dogGallery">
+    <div>
       <div className="row">
         <button className="pageButton" disabled={!isPrevPage} onClick={prevPageHandler}><GrPrevious/></button>
         <button className="pageButton" disabled={!isNextPage} onClick={nextPageHandler}><GrNext/></button>

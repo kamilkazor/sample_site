@@ -30,25 +30,29 @@ const Navbar = ({headerRef}) => {
 
   return (
     <nav id="Navbar" className={sticky ? "sticky" : ""} ref={navRef}>
-      <div className="navContainer">
-      <div className="logo"><img src={logoIcon} alt="logo"/><span>Sample Site</span></div>
-      <div onClick={burgerHandler} className={burgerOpen ? "menu open" : "menu"}>
-        <div className="burger"></div>
+      <div id="navContainer">
+        <div id="logo">
+          <img src={logoIcon} alt="logo"/><span>Sample Site</span>
+        </div>
+        <div onClick={burgerHandler} className={burgerOpen ? "menu open" : "menu"}>
+          <div className="burger"></div>
+        </div>
+      <div id="linksContainer" className={linksStyle}>
+        <ul className={linksStyle}>
+          <Link to="/">
+            <li onClick={burgerHandler}>Home</li>
+          </Link>
+          <Link to="/Link1">
+            <li onClick={burgerHandler}>link1</li>
+          </Link>
+          <Link to="/Link2">
+            <li onClick={burgerHandler}>link2</li>
+          </Link>
+          <Link to="/Link3">
+            <li onClick={burgerHandler}>link3</li>
+          </Link>
+        </ul>
       </div>
-      <ul className={linksStyle}>
-        <Link to="/">
-          <li onClick={burgerHandler}>Home</li>
-        </Link>
-        <Link to="/Link1">
-          <li onClick={burgerHandler}>link1</li>
-        </Link>
-        <Link to="/Link2">
-          <li onClick={burgerHandler}>link2</li>
-        </Link>
-        <Link to="/Link3">
-          <li onClick={burgerHandler}>link3</li>
-        </Link>
-      </ul>
       </div>
     </nav>
   )

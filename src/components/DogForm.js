@@ -83,7 +83,7 @@ const DogForm = () => {
 
 
   return (
-    <div>
+    <div id="gallery">
       <form onSubmit={submitHandler}>
         <label htmlFor="breed">breed: </label>
         <select 
