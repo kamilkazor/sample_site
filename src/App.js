@@ -10,7 +10,7 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
-import Link1 from "./pages/Link1";
+import HallOfDogs from "./pages/HallOfDogs";
 import Link2 from "./pages/Link2";
 import Link3 from "./pages/Link3";
 
@@ -27,8 +27,8 @@ const App = () => {
             <Route exact path="/">
               <Home/>
             </Route>
-            <Route path="/Link1">
-              <Link1/>
+            <Route path="/hall-of-dogs">
+              <HallOfDogs/>
             </Route>
             <Route path="/Link2">
               <Link2/>

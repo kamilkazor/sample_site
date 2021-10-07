@@ -3,7 +3,7 @@ import DogGallery from "../components/DogGallery";
 
 import { useSelector } from "react-redux";
 
-const Link1 = () => {
+const HallOfDogs = () => {
   const fetchError = useSelector((store) => store.dog.fetchError)
 
   return (
@@ -26,4 +26,4 @@ const Link1 = () => {
   )
 }
 
-export default Link1;
+export default HallOfDogs;

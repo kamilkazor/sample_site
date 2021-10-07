@@ -42,8 +42,8 @@ const Navbar = ({headerRef}) => {
           <Link to="/">
             <li onClick={burgerHandler}>Home</li>
           </Link>
-          <Link to="/Link1">
-            <li onClick={burgerHandler}>link1</li>
+          <Link to="/hall-of-dogs">
+            <li onClick={burgerHandler}>Hall of Dogs</li>
           </Link>
           <Link to="/Link2">
             <li onClick={burgerHandler}>link2</li>
