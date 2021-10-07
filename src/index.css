@@ -350,6 +350,7 @@ article img {
 #dogFormArticle {
   margin-top: 2rem;
   padding: 1rem 0;
+  align-items: center;
 }
 #dogFormArticle a {
   text-decoration: none;
