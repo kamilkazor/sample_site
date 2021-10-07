@@ -202,7 +202,7 @@ html, body {
 }
 .githubQR {
   width: auto;
-  height: 15rem;
+  max-height: 15rem;
   margin: 0 2rem;
 }
 .contactIcon {
@@ -265,10 +265,10 @@ article img {
   margin-top: 2rem;
 }
 #aboutLogoImg {
-  max-height: 9rem;
+  max-width: 9rem;
 }
 #responsiveQR {
-  max-height: 16rem;
+  max-width: 16rem;
 }
 #responsiveArticle .textBox {
   max-width: 30rem;
@@ -300,15 +300,18 @@ article img {
 }
 #madeWithArticle .iconImg {
   width: 100%;
+  padding: 1rem;
 }
 
 /* Dog API */
 #dogGallery {
-  padding: 1rem;
+  padding: 2rem 0;
 }
+
 .dogImg {
-  width: 13rem;
+  width: 15rem;
   height: auto;
+  padding: 2rem;
 }
 .imgRow {
   display: flex;
@@ -445,5 +448,25 @@ article img {
   }
   #Header h1 {
     font-size: 3rem;
+  }
+  article img {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 310px) {
+  #Header {
+    height: 12.5rem;
+  }
+  #Header h1 {
+    font-size: 2.5rem;
+  }
+  .dogImg {
+    width: 12rem;
+  }
+  .githubQR {
+    width: auto;
+    max-height: 15rem;
+    margin: 0;
   }
 }
