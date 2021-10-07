@@ -7,7 +7,15 @@
   --originalGreen: hsl(206, 12%, 39%);
   --veryLightGreen: hsl(206, 12%, 95%);
   --alphaWhiteLight: hsla(120, 6%, 100%, 0.2);
-  --pageButtonActiveFilter: invert(13%) sepia(15%) saturate(485%) hue-rotate(164deg) brightness(89%) contrast(93%);
+  --pageButtonDisabledFilter: 
+      /* hsl(206, 12%, 75%) */
+      invert(80%) sepia(6%) saturate(342%) hue-rotate(166deg) brightness(98%) contrast(84%);
+  --pageButtonActiveFilter:
+      /* hsl(206, 12%, 15%); */
+      invert(13%) sepia(15%) saturate(485%) hue-rotate(164deg) brightness(89%) contrast(93%);
+  --pageButtonHoverFilter: 
+      /* hsl(206, 12%, 39%) */
+      invert(39%) sepia(18%) saturate(375%) hue-rotate(163deg) brightness(91%) contrast(85%);
 }
 html, body {
   margin: 0;
@@ -321,13 +329,18 @@ article img {
   align-items: center;
   justify-content: center;
   color: var(--darkGreen);
-  padding: 2rem;
-  margin: 0 1rem;
+  padding: 1rem;
+  margin: 1rem 2rem;
 }
 .pageButton svg {
   filter: var(--pageButtonActiveFilter);
 }
-
+.pageButton:hover svg {
+  filter: var(--pageButtonHoverFilter)
+}
+.pageButton:disabled svg {
+  filter: var(--pageButtonDisabledFilter)
+}
 
 
 /* Adding style for mobile devices */

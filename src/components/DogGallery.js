@@ -12,11 +12,13 @@ const DogGallery =() => {
   const showLimit = 60;
 
   const nextPageHandler = () => {
+    window.scrollTo(0, 0);
     if(showFrom + showLimit < galleryLength.current){
       setShowFrom(showFrom + showLimit);
     }
   }
   const prevPageHandler = () => {
+    window.scrollTo(0, 0);
     if(showFrom > 0 + showLimit){
       setShowFrom(showFrom - showLimit);
     }
@@ -24,6 +26,7 @@ const DogGallery =() => {
       setShowFrom(0);
     }
   }
+
 
   //Sets imagesToShow to prepared JSX
   const prepareImages = (srcs) => {
@@ -84,16 +87,21 @@ const DogGallery =() => {
     prepareImages(imagesData.slice(showFrom, showFrom + showLimit));
   },[showFrom])
 
+  useEffect(() => {
+    showFrom === 0 ? setIsPrevPage(false) : setIsPrevPage(true);
+    showFrom + showLimit >= galleryLength.current ? setIsNextPage(false) : setIsNextPage(true);
+  },[imagesToShow])
+
   return (
     <div id="dogGallery">
       <div className="row">
-        <button className="pageButton" onClick={prevPageHandler}><GrPrevious/></button>
-        <button className="pageButton" onClick={nextPageHandler}><GrNext/></button>
+        <button className="pageButton" disabled={!isPrevPage} onClick={prevPageHandler}><GrPrevious/></button>
+        <button className="pageButton" disabled={!isNextPage} onClick={nextPageHandler}><GrNext/></button>
       </div>
         {imagesToShow}
       <div className="row">
-        <button onClick={prevPageHandler}>prev</button>
-        <button onClick={nextPageHandler}>next</button>
+        <button className="pageButton" disabled={!isPrevPage} onClick={prevPageHandler}><GrPrevious/></button>
+        <button className="pageButton" disabled={!isNextPage} onClick={nextPageHandler}><GrNext/></button>
       </div>
     </div>
   )
