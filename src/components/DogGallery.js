@@ -41,15 +41,19 @@ const DogGallery =() => {
       <div className="imgRow">
         <div className="imgRow">
           <div className="imgCol" key="col1">
-            {cols[0].map((imageSrc) => (
-              <a href={imageSrc} target="_blank" rel="noreferrer" key={imageSrc}>
+            {cols[0].map((imageSrc, index) => (
+              <a href={imageSrc} target="_blank" rel="noreferrer" 
+                key={`${Date.now()}-${0}-${index}:${imageSrc}`}
+              >
                 <img className="dogImg" src={imageSrc} alt=""/>
               </a>
             ))}
           </div>
           <div className="imgCol" key="col2">
-            {cols[1].map((imageSrc) => (
-              <a href={imageSrc} target="_blank" rel="noreferrer" key={imageSrc}>
+            {cols[1].map((imageSrc, index) => (
+              <a href={imageSrc} target="_blank" rel="noreferrer" 
+                key={`${Date.now()}-${1}-${index}:${imageSrc}`}
+              >
                 <img className="dogImg" src={imageSrc} alt=""/>
               </a>
             ))}
@@ -57,15 +61,19 @@ const DogGallery =() => {
         </div>
         <div className="imgRow">
           <div className="imgCol" key="col3">
-            {cols[2].map((imageSrc) => (
-              <a href={imageSrc} target="_blank" rel="noreferrer" key={imageSrc}>
+            {cols[2].map((imageSrc, index) => (
+              <a href={imageSrc} target="_blank" rel="noreferrer" 
+                key={`${Date.now()}-${2}-${index}:${imageSrc}`}
+              >
                 <img className="dogImg" src={imageSrc} alt=""/>
               </a>
             ))}
           </div>
           <div className="imgCol" key="col4">
-            {cols[3].map((imageSrc) => (
-              <a href={imageSrc} target="_blank" rel="noreferrer" key={imageSrc}>
+            {cols[3].map((imageSrc, index) => (
+              <a href={imageSrc} target="_blank" rel="noreferrer" 
+                key={`${Date.now()}-${3}-${index}:${imageSrc}`}
+              >
                 <img className="dogImg" src={imageSrc} alt=""/>
               </a>
             ))}
