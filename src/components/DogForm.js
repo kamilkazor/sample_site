@@ -83,17 +83,20 @@ const DogForm = () => {
 
 
   return (
-    <div id="gallery">
-      <form onSubmit={submitHandler}>
-        <label htmlFor="breed">breed: </label>
-        <select 
-        id="breed" 
-        name="breed" 
-        value={selectedBreed} 
-        onChange={(e) => {setSelectedBreed(e.target.value)}}
-        >
-          {breeds.map((breed) => <option key={breed} value={breed}>{breed}</option>)}
-        </select>
+    <div>
+      <form onSubmit={submitHandler} id="dogForm">
+        <div className="selectContainer">
+          <label htmlFor="breed">breed: </label>
+          <select 
+          id="breed" 
+          name="breed" 
+          value={selectedBreed} 
+          onChange={(e) => {setSelectedBreed(e.target.value)}}
+          >
+            {breeds.map((breed) => <option key={breed} value={breed}>{breed}</option>)}
+          </select>         
+        </div>
+        <div className="selectContainer">
         <label htmlFor="subBreed">sub-breed: </label>
         <select 
         id="subBreed" 
@@ -103,6 +106,7 @@ const DogForm = () => {
         >
           {subBreeds.map((subBreed) => <option key={subBreed} value={subBreed}>{subBreed}</option>)}
         </select>
+        </div>
         <input type="submit" value="search"/>
       </form>
     </div>

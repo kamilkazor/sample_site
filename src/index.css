@@ -307,7 +307,6 @@ article img {
 #dogGallery {
   padding: 2rem 0;
 }
-
 .dogImg {
   width: 15rem;
   height: auto;
@@ -344,7 +343,22 @@ article img {
 .pageButton:disabled svg {
   filter: var(--pageButtonDisabledFilter)
 }
-
+#dogForm {
+  display: flex;
+}
+.selectContainer {
+  display: flex;
+}
+.selectContainer select {
+  height: 3rem;
+  width: 11rem;
+  font-size: 1.2rem;
+}
+.selectContainer option {
+  height: 3rem;
+  width: 10rem;
+  font-size: 1.2rem;
+}
 
 /* Adding style for mobile devices */
 @media (max-width: 600px) {
