@@ -11,11 +11,11 @@ const Link1 = () => {
       <main className="main">
         <article id="dogFormArticle" className="column veryLightGreenBG">
           <div className="row">
-            <p>Simple gallery that uses <a href="https://dog.ceo/dog-api/">Dog API</a></p>
+            <p>Simple gallery that uses <a target="_blank" rel="noreferrer" href="https://dog.ceo/dog-api/">Dog API</a></p>
           </div>
           <DogForm/>
           {fetchError && <div className="row">
-              <p>The app was unable to fetch data from <a href="https://dog.ceo/dog-api/">Dog API</a>. Please try again later.</p>
+              <p>The app was unable to fetch data from the API. Please try again later.</p>
             </div>}
         </article>
         <article id="dogGalleryArticle" className="row veryLightGreenBG">
