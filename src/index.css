@@ -6,6 +6,7 @@
   --darkGreen: hsl(206, 12%, 15%);
   --originalGreen: hsl(206, 12%, 39%);
   --veryLightGreen: hsl(206, 12%, 95%);
+  --lightGreen: hsl(206, 12%, 75%);
   --alphaWhiteLight: hsla(120, 6%, 100%, 0.2);
   --pageButtonDisabledFilter: 
       /* hsl(206, 12%, 75%) */
@@ -343,22 +344,46 @@ article img {
 .pageButton:disabled svg {
   filter: var(--pageButtonDisabledFilter)
 }
+#dogFormArticle {
+  padding: 1rem 0;
+}
 #dogForm {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .selectContainer {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0.5rem;
+}
+.selectContainer label {
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  color: var(--originalGreen);
 }
 .selectContainer select {
-  height: 3rem;
-  width: 11rem;
-  font-size: 1.2rem;
+  height: 2rem;
+  width: 9.7rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--originalGreen);
+}
+.selectContainer select:disabled {
+  color: var(--lightGreen);
 }
 .selectContainer option {
-  height: 3rem;
-  width: 10rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--originalGreen);
 }
+
 
 /* Adding style for mobile devices */
 @media (max-width: 600px) {
@@ -366,6 +391,7 @@ article img {
     flex: 1;
     display: flex;
     justify-content: space-between;
+    background-color: yellow;
   }
   .menu {
     position:relative;
@@ -380,6 +406,12 @@ article img {
   }
   #Header h1 {
     font-size: 4rem;
+  }
+  #dogForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
   }
 
   /* Animated mobile menu */
@@ -467,6 +499,7 @@ article img {
     padding: 1rem 0;
   }
 }
+
 
 @media (max-width: 310px) {
   #Header {

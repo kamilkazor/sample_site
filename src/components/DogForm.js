@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setBreedsData, setImagesData } from "../redux/dogSlice";
 
+
 const DogForm = () => {
   const breedsData = useSelector((store) => store.dog.breedsData);
   const dispatch = useDispatch();
@@ -12,19 +13,28 @@ const DogForm = () => {
   const [subBreeds, setSubBreeds] = useState([]);
   const [selectedSubBreed, setSelectedSubBreed] = useState("all");
   const [subBreedDisabled, setSubBreedDisabled] = useState(true);
+  const [newSearch, setNewSerch] = useState(false);
 
 
-  //Setting avaliable options for select inputs
+  //Setting avaliable options for select inputs, fetching images on changes of selected values
   useEffect(() => {
     setBreeds(["random 50", ...Object.keys(breedsData)]);
   },[breedsData]);
   useEffect(() => {
     setSelectedSubBreed("all")
     selectedBreed === "random 50" ? setSubBreeds(["all"]) : setSubBreeds(["all", ...breedsData[selectedBreed]]);
+    setNewSerch(true);
   },[selectedBreed]);
+  useEffect(() => {
+    setNewSerch(true);
+  },[selectedSubBreed])
   useEffect(() => {
     subBreeds.length > 1 ? setSubBreedDisabled(false) : setSubBreedDisabled(true);
   },[subBreeds]);
+  useEffect(() => {
+    if(newSearch) fetchImagesData();
+    setNewSerch(false);
+  },[newSearch])
   
   
   //Creating proper url and fetching avaliable breeds
@@ -76,15 +86,9 @@ const DogForm = () => {
   },[]);
 
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    fetchImagesData();
-  };
-
-
   return (
     <div>
-      <form onSubmit={submitHandler} id="dogForm">
+      <form id="dogForm">
         <div className="selectContainer">
           <label htmlFor="breed">breed: </label>
           <select 
@@ -107,7 +111,6 @@ const DogForm = () => {
           {subBreeds.map((subBreed) => <option key={subBreed} value={subBreed}>{subBreed}</option>)}
         </select>
         </div>
-        <input type="submit" value="search"/>
       </form>
     </div>
   );
