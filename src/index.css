@@ -305,6 +305,9 @@ article img {
 }
 
 /* Dog API */
+#dogGalleryArticle {
+  margin-bottom: 2rem;
+}
 #dogGallery {
   padding: 2rem 0;
 }
