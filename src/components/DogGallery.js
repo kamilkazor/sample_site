@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { GrNext, GrPrevious } from "react-icons/gr";
 
 const DogGallery =() => {
   const imagesData = useSelector((store) => store.dog.imagesData);
@@ -86,8 +87,8 @@ const DogGallery =() => {
   return (
     <div id="dogGallery">
       <div className="row">
-        <button className="pageButton" onClick={prevPageHandler}>&lt;</button>
-        <button className="pageButton" onClick={nextPageHandler}>&gt;</button>
+        <button className="pageButton" onClick={prevPageHandler}><GrPrevious/></button>
+        <button className="pageButton" onClick={nextPageHandler}><GrNext/></button>
       </div>
         {imagesToShow}
       <div className="row">
