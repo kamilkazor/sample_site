@@ -5,7 +5,8 @@ const dogSlice = createSlice({
   name: 'dog',
   initialState: {
     breedsData: {},
-    imagesData: []
+    imagesData: [],
+    fetchError: false,
   },
   reducers: {
     setBreedsData: (state, action) => {
@@ -14,9 +15,12 @@ const dogSlice = createSlice({
     setImagesData: (state, action) => {
       return {...state, imagesData: [...action.payload]}
     },
+    setFetchError: (state, action) => {
+      return {...state, fetchError: action.payload}
+    },
   }
 });
 
 
-export const { setBreedsData, setImagesData } = dogSlice.actions;
+export const { setBreedsData, setImagesData, setFetchError } = dogSlice.actions;
 export default dogSlice.reducer;

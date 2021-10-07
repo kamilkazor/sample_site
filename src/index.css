@@ -345,6 +345,7 @@ article img {
   filter: var(--pageButtonDisabledFilter)
 }
 #dogFormArticle {
+  margin-top: 2rem;
   padding: 1rem 0;
 }
 #dogFormArticle a {

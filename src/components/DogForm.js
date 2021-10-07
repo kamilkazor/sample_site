@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setBreedsData, setImagesData } from "../redux/dogSlice";
+import { setBreedsData, setImagesData, setFetchError } from "../redux/dogSlice";
 
 
 const DogForm = () => {
@@ -52,6 +52,7 @@ const DogForm = () => {
     fetch(url)
     .then((res) => {
       if(res.ok){
+        dispatch(setFetchError(false))
         return res.json();
       }
       else{
@@ -62,7 +63,7 @@ const DogForm = () => {
       dispatch(setImagesData([...data.message]));
     })
     .catch((err) => {
-      console.log(err);
+      dispatch(setFetchError(true));
     })
   }
   //Fetching avaliable breeds form Dog API and random images on component first render
@@ -71,6 +72,7 @@ const DogForm = () => {
     fetch('https://dog.ceo/api/breeds/list/all')
     .then((res) => {
       if(res.ok){
+        dispatch(setFetchError(false))
         return res.json();
       }
       else{
@@ -81,7 +83,7 @@ const DogForm = () => {
       dispatch(setBreedsData({...data.message}));
     })
     .catch((err) => {
-      console.log(err);
+      dispatch(setFetchError(true));
     })
   },[]);
 
