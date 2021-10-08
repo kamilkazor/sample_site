@@ -1,8 +1,10 @@
 import Row from "./Row";
 
+import { IconContext } from "react-icons";
+import { IoIosCall, IoIosMail } from "react-icons/io";
+
 import githubQR from "../images/githubQR.svg";
-import phoneIcon from "../images/phoneIcon.svg";
-import envelopeIcon from "../images/envelopeIcon.svg";
+
 
 const Footer = () => {
   return (
@@ -18,11 +20,15 @@ const Footer = () => {
           <div className="contact">
             <h3>Contact:</h3>
             <Row>
-              <img className="contactIcon" src={phoneIcon} alt="tel"/>
+              <IconContext.Provider value={{ color: "white", size:"2rem"}}>
+                  <IoIosCall/>
+              </IconContext.Provider>
               <p>+48 664 909 231</p>
             </Row>
             <Row>
-              <img className="contactIcon" src={envelopeIcon} alt="email"/>
+              <IconContext.Provider value={{ color: "white", size:"2rem"}}>
+                <IoIosMail/>
+              </IconContext.Provider>
               <p>kkrk1994@gmail.com</p>
             </Row>
           </div>
