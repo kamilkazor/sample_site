@@ -64,6 +64,10 @@ html, body {
   margin-bottom: calc(var(--navbarHeight) * -1);
   z-index: 1000;
 }
+#Navbar a {
+  text-decoration: none;
+  color: white;
+}
 #Navbar.sticky {
   position: fixed; 
   bottom: auto;
@@ -84,9 +88,6 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: transparent;
-}
-#linksContainer ul a {
-  text-decoration: none;
 }
 #linksContainer li {
   color: white;
