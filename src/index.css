@@ -60,7 +60,6 @@ html, body {
 /* Sticky navbar */
 #Navbar {
   min-height: var(--navbarHeight);
-  color: white;
   background-color: transparent;
   transition: background-color 0.5s;
   display: flex;
@@ -98,18 +97,18 @@ html, body {
 }
 #linksContainer li {
   color: var(--alphaWhiteStrong);
-  font-size: calc(var(--navbarHeight) * 0.4);
-  padding: 0 calc(var(--navbarHeight) * 0.4);
+  font-size: 1.2rem;
+  padding: 0 1.2rem;
   height: var(--navbarHeight);
   display: flex;
   justify-content: center;
   align-items: center; 
 }
-
-/* Animated hamburger menu */
 #linksContainer li:hover {
   background-color: var(--alphaWhiteLight);
 }
+
+/* Animated hamburger menu */
 .menu {
   display: none;
 }
@@ -156,7 +155,7 @@ html, body {
 #logo {
   height: var(--navbarHeight);
   margin: 0;
-  padding: 0 calc(var(--navbarHeight) * 0.2);
+  margin-left: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,16 +163,15 @@ html, body {
   -webkit-user-select: none;
 }
 #logo img {
-  height: calc(var(--navbarHeight) * 0.6);
+  height: 1.8rem;
   opacity: 0.7;
 }
 #logo span {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 calc(var(--navbarHeight) * 0.1);
-  height: calc(var(--navbarHeight) * 0.6);
-  font-size: calc(var(--navbarHeight) * 0.5);
+  margin-left: 0.2rem;
+  font-size: 1.5rem;
   font-family: 'Ubuntu', sans-serif;
   color: var(--alphaWhiteStrong);
 }
@@ -246,7 +244,7 @@ article {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  margin: 1rem 0;
+  margin-top: 2rem;
 }
 article h2 {
   font-size: 2rem;
@@ -258,7 +256,7 @@ article p {
   font-weight: bolder;
 }
 article img {
-  padding: 1rem;
+  padding: 2rem;
 }
 .textBox {
   text-align: justify;
@@ -277,9 +275,6 @@ article img {
 }
 
 /* Home */
-#aboutArticle {
-  margin-top: 2rem;
-}
 #aboutLogoImg {
   max-width: 9rem;
 }
@@ -398,7 +393,6 @@ article img {
   filter: var(--pageButtonDisabledFilter)
 }
 #dogFormArticle {
-  margin-top: 2rem;
   padding: 1rem 0;
   align-items: center;
 }
@@ -461,11 +455,8 @@ article img {
 
 /* Adding style for mobile devices */
 @media (max-width: 680px) {
-  #barContainer {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    background-color: yellow;
+  #logo {
+    margin-left: 0.5rem;
   }
   #dogForm {
     display: flex;
@@ -560,7 +551,7 @@ article img {
 
 @media (max-width: 480px) {
   article img {
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
   #logo span {
     display: none;
