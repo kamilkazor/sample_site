@@ -192,8 +192,8 @@ html, body {
 .infoBox {
   padding: 0 2rem;
 }
-.contact > h3 {
-  margin: 0;
+#Footer .contact h3 {
+  margin: 2rem 0 0.5rem 0;
 }
 #Footer .row {
   flex: 1;
@@ -207,10 +207,12 @@ html, body {
   margin: 0 2rem;
 }
 .contactIcon {
-  height: 1.2rem;
+  width: 1.5rem;
   padding: 0.5rem 0.5rem;
   filter:  brightness(0) invert(1);
+  margin-left: -0.4rem;
 }
+
 
 /* Main content of site */
 .mainContainer {
