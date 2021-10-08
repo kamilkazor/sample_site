@@ -433,6 +433,16 @@ article img {
   color: var(--originalGreen);
 }
 
+/* Empty */
+#emptyArticle {
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+#underConstructionIcon {
+  max-width: 10rem;
+}
+
 
 /* Adding style for mobile devices */
 @media (max-width: 680px) {
