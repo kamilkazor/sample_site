@@ -31,9 +31,12 @@ const Navbar = ({headerRef}) => {
   return (
     <nav id="Navbar" className={sticky ? "sticky" : ""} ref={navRef}>
       <div id="navContainer">
-        <div id="logo">
-          <img src={logoIcon} alt="logo"/><span>Sample Site</span>
-        </div>
+        <Link to="/">
+          <div id="logo" onClick={() => {window.scrollTo(0, 0)}}>
+            <img src={logoIcon} alt="logo"/>
+            <span>SSite</span>
+          </div>
+        </Link>
         <div onClick={burgerHandler} className={burgerOpen ? "menu open" : "menu"}>
           <div className="burger"></div>
         </div>
@@ -45,11 +48,11 @@ const Navbar = ({headerRef}) => {
           <Link to="/hall-of-dogs">
             <li onClick={burgerHandler}>Hall of Dogs</li>
           </Link>
-          <Link to="/Link2">
-            <li onClick={burgerHandler}>link2</li>
+          <Link to="/empty-1">
+            <li onClick={burgerHandler}>Empty 1</li>
           </Link>
-          <Link to="/Link3">
-            <li onClick={burgerHandler}>link3</li>
+          <Link to="/empty-2">
+            <li onClick={burgerHandler}>Empty 2</li>
           </Link>
         </ul>
       </div>

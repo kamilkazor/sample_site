@@ -7,18 +7,40 @@ const DogGallery =() => {
   const galleryLength = useRef(0);
   const [imagesToShow, setImagesToShow] = useState(null);
   const [showFrom, setShowFrom] = useState(0);
-  const [isNextPage, setIsNextPage] =useState(false);
-  const [isPrevPage, setIsPrevPage] =useState(false);
+  const [isNextPage, setIsNextPage] = useState(false);
+  const [isPrevPage, setIsPrevPage] = useState(false);
   const showLimit = 60;
+  
+  useEffect(() => {
+    galleryLength.current = imagesData.length;
+    setShowFrom(0);
+    prepareImages(imagesData.slice(showFrom, showLimit))
+  },[imagesData])
+  
+  useEffect(() => {
+    prepareImages(imagesData.slice(showFrom, showFrom + showLimit));
+  },[showFrom])
+  
+  useEffect(() => {
+    showFrom === 0 ? setIsPrevPage(false) : setIsPrevPage(true);
+    showFrom + showLimit >= galleryLength.current ? setIsNextPage(false) : setIsNextPage(true);
+  },[imagesToShow])
+  
 
-  const nextPageHandler = () => {
-    window.scrollTo(0, 0);
+  //Changing page with images and scrolling window to the top of gallery
+  const dogGalleryRef = useRef();
+  const nextPageHandler = (scrollTop) => {
+    if(scrollTop){
+      window.scrollTo(0, dogGalleryRef.current.offsetTop);
+    }
     if(showFrom + showLimit < galleryLength.current){
       setShowFrom(showFrom + showLimit);
     }
   }
-  const prevPageHandler = () => {
-    window.scrollTo(0, 0);
+  const prevPageHandler = (scrollTop) => {
+    if(scrollTop){
+      window.scrollTo(0, dogGalleryRef.current.offsetTop);
+    }
     if(showFrom > 0 + showLimit){
       setShowFrom(showFrom - showLimit);
     }
@@ -85,31 +107,40 @@ const DogGallery =() => {
   }
   
 
-  useEffect(() => {
-    galleryLength.current = imagesData.length;
-    setShowFrom(0);
-    prepareImages(imagesData.slice(showFrom, showLimit))
-  },[imagesData])
-
-  useEffect(() => {
-    prepareImages(imagesData.slice(showFrom, showFrom + showLimit));
-  },[showFrom])
-
-  useEffect(() => {
-    showFrom === 0 ? setIsPrevPage(false) : setIsPrevPage(true);
-    showFrom + showLimit >= galleryLength.current ? setIsNextPage(false) : setIsNextPage(true);
-  },[imagesToShow])
-
   return (
-    <div id="dogGallery">
+    <div id="dogGallery" ref={dogGalleryRef}>
       <div className="row">
-        <button className="pageButton" disabled={!isPrevPage} onClick={prevPageHandler}><GrPrevious/></button>
-        <button className="pageButton" disabled={!isNextPage} onClick={nextPageHandler}><GrNext/></button>
+        <button
+          className="pageButton" 
+          disabled={!isPrevPage} 
+          onClick={() => {prevPageHandler(false)}}
+        >
+          <GrPrevious/>
+        </button>
+        <button 
+          className="pageButton" 
+          disabled={!isNextPage} 
+          onClick={() => {nextPageHandler(false)}}
+        >
+          <GrNext/>
+        </button>
       </div>
         {imagesToShow}
       <div className="row">
-        <button className="pageButton" disabled={!isPrevPage} onClick={prevPageHandler}><GrPrevious/></button>
-        <button className="pageButton" disabled={!isNextPage} onClick={nextPageHandler}><GrNext/></button>
+        <button
+          className="pageButton"
+          disabled={!isPrevPage}
+          onClick={() => {prevPageHandler(true)}}
+        >
+          <GrPrevious/>
+        </button>
+        <button
+          className="pageButton"
+          disabled={!isNextPage}
+          onClick={() => {nextPageHandler(true)}}
+        >
+          <GrNext/>
+        </button>
       </div>
     </div>
   )

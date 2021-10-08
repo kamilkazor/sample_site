@@ -11,8 +11,8 @@ import Navbar from "./components/Navbar";
 
 import Home from "./pages/Home";
 import HallOfDogs from "./pages/HallOfDogs";
-import Link2 from "./pages/Link2";
-import Link3 from "./pages/Link3";
+import Empty1 from "./pages/Empty1";
+import Empty2 from "./pages/Empty2";
 
 const App = () => {
   const headerRef = useRef();
@@ -30,11 +30,11 @@ const App = () => {
             <Route path="/hall-of-dogs">
               <HallOfDogs/>
             </Route>
-            <Route path="/Link2">
-              <Link2/>
+            <Route path="/empty-1">
+              <Empty1/>
             </Route>
-            <Route path="/Link3">
-              <Link3/>
+            <Route path="/empty-2">
+              <Empty2/>
             </Route>
           </Switch>
           <Footer/>

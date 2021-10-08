@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Ubuntu";
+  src: url(./fonts/Ubuntu/Ubuntu-Bold.ttf);
+}
+
 :root{
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
@@ -8,6 +13,7 @@
   --veryLightGreen: hsl(206, 12%, 95%);
   --lightGreen: hsl(206, 12%, 75%);
   --alphaWhiteLight: hsla(120, 6%, 100%, 0.2);
+  --alphaWhiteStrong: hsla(120, 6%, 100%, 0.7);
   --pageButtonDisabledFilter: 
       /* hsl(206, 12%, 75%) */
       invert(80%) sepia(6%) saturate(342%) hue-rotate(166deg) brightness(98%) contrast(84%);
@@ -32,7 +38,9 @@ html, body {
 /* Header */
 #Header {
   height: 25rem;
-  background-image: linear-gradient(hsla(120, 0%, 0%, 0.5),hsla(120, 0%, 0%, 0.5)), url(./images/headerBackground.jpeg);
+  height: min(25rem, 70vw);
+  background-image: linear-gradient(hsla(206, 12%, 15%, 0.5),hsla(206, 12%, 15%, 0.5)),
+    url(./images/headerBackground.webp);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -41,16 +49,17 @@ html, body {
   align-items: center;
 }
 #Header h1 {
-  color: white;
-  font-size: 5rem;
+  color: var(--alphaWhiteStrong);
+  font-size: min(11rem, 14vw);
   padding: 1rem;
-  border: 0.3rem dotted white;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 /* Sticky navbar */
 #Navbar {
   min-height: var(--navbarHeight);
-  color: white;
   background-color: transparent;
   transition: background-color 0.5s;
   display: flex;
@@ -61,6 +70,9 @@ html, body {
   bottom: var(--navbarHeight);
   margin-bottom: calc(var(--navbarHeight) * -1);
   z-index: 1000;
+}
+#Navbar a {
+  text-decoration: none;
 }
 #Navbar.sticky {
   position: fixed; 
@@ -83,28 +95,25 @@ html, body {
   padding: 0;
   background-color: transparent;
 }
-#linksContainer ul a {
-  text-decoration: none;
-}
 #linksContainer li {
-  color: white;
-  font-size: calc(var(--navbarHeight) * 0.4);
-  padding: 0 calc(var(--navbarHeight) * 0.4);
+  color: var(--alphaWhiteStrong);
+  font-size: 1.2rem;
+  padding: 0 1.2rem;
   height: var(--navbarHeight);
   display: flex;
   justify-content: center;
   align-items: center; 
 }
-
-/* Animated hamburger menu */
 #linksContainer li:hover {
   background-color: var(--alphaWhiteLight);
 }
+
+/* Animated hamburger menu */
 .menu {
   display: none;
 }
 .menu .burger {
-  background-color: white;
+  background-color: var(--alphaWhiteStrong);
   width: 60%;
   height: 3px;
   transition: background-color 0.5s;
@@ -113,7 +122,7 @@ html, body {
 .menu .burger::before {
   content: "";
   position: absolute;
-  background-color: white;
+  background-color: var(--alphaWhiteStrong);
   width: 60%;
   height: 3px;
   transform:translateY(calc(var(--navbarHeight) * -0.2));
@@ -123,7 +132,7 @@ html, body {
 .menu .burger::after {
   content: "";
   position: absolute;
-  background-color: white;
+  background-color: var(--alphaWhiteStrong);
   width: 60%;
   height: 3px;
   transform:translateY(calc(var(--navbarHeight) * 0.2));
@@ -146,21 +155,25 @@ html, body {
 #logo {
   height: var(--navbarHeight);
   margin: 0;
-  padding: 0 calc(var(--navbarHeight) * 0.2);
+  margin-left: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
 }
 #logo img {
-  height: calc(var(--navbarHeight) * 0.6);
+  height: 1.8rem;
+  opacity: 0.7;
 }
 #logo span {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 calc(var(--navbarHeight) * 0.1);
-  height: calc(var(--navbarHeight) * 0.6);
-  font-size: calc(var(--navbarHeight) * 0.5);
+  margin-left: 0.2rem;
+  font-size: 1.5rem;
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--alphaWhiteStrong);
 }
 
 /* Footer */
@@ -192,8 +205,11 @@ html, body {
 .infoBox {
   padding: 0 2rem;
 }
-.contact > h3 {
-  margin: 0;
+#Footer .contact h3 {
+  margin: 2rem 0 0.5rem 0;
+}
+#Footer .contact p {
+  margin-left: 0.5rem;
 }
 #Footer .row {
   flex: 1;
@@ -206,11 +222,8 @@ html, body {
   max-height: 15rem;
   margin: 0 2rem;
 }
-.contactIcon {
-  height: 1.2rem;
-  padding: 0.5rem 0.5rem;
-  filter:  brightness(0) invert(1);
-}
+
+
 
 /* Main content of site */
 .mainContainer {
@@ -231,7 +244,7 @@ article {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  margin: 1rem 0;
+  margin-top: 2rem;
 }
 article h2 {
   font-size: 2rem;
@@ -243,7 +256,7 @@ article p {
   font-weight: bolder;
 }
 article img {
-  padding: 1rem;
+  padding: 2rem;
 }
 .textBox {
   text-align: justify;
@@ -262,9 +275,6 @@ article img {
 }
 
 /* Home */
-#aboutArticle {
-  margin-top: 2rem;
-}
 #aboutLogoImg {
   max-width: 9rem;
 }
@@ -298,10 +308,37 @@ article img {
   align-items: center;
   justify-content: center;
   background-color: var(--originalGreen);
+  transition: transform 0.5s;
+  position: relative;
+  overflow: hidden;
 }
-#madeWithArticle .iconImg {
+#madeWithArticle .iconCard span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.3rem;
+  background-color: hsla(120, 6%, 100%, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.5s;
+}
+#madeWithArticle .iconCard:hover {
+  transform: translateY(0.5rem);
+}
+#madeWithArticle .iconCard:hover span {
+  transform: translateY(0);
+}
+#madeWithArticle .iconCard .iconImg {
   width: 100%;
   padding: 1rem;
+  transition: transform 0.5s;
+}
+#madeWithArticle .iconCard:hover .iconImg {
+  transform: translateY(-0.5rem);
 }
 
 /* Dog API */
@@ -314,7 +351,15 @@ article img {
 .dogImg {
   width: 15rem;
   height: auto;
-  padding: 2rem;
+  padding: 0;
+  margin: 2rem;
+  opacity: 1;
+  transition: opacity 0.5s;
+  outline: 3px solid var(--originalGreen);
+  outline-offset: -3px;
+}
+.dogImg:hover {
+  opacity: 0.7;
 }
 .imgRow {
   display: flex;
@@ -348,7 +393,6 @@ article img {
   filter: var(--pageButtonDisabledFilter)
 }
 #dogFormArticle {
-  margin-top: 2rem;
   padding: 1rem 0;
   align-items: center;
 }
@@ -398,14 +442,30 @@ article img {
 }
 
 
+/* Empty */
+#emptyArticle {
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+#underConstructionIcon {
+  max-width: 10rem;
+}
+
+
 /* Adding style for mobile devices */
-@media (max-width: 600px) {
-  #barContainer {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    background-color: yellow;
+@media (max-width: 680px) {
+  #logo {
+    margin-left: 0.5rem;
   }
+  #dogForm {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  
+  /* Animated mobile menu */
   .menu {
     position:relative;
     display: flex;
@@ -414,20 +474,6 @@ article img {
     width: var(--navbarHeight);
     height: var(--navbarHeight);
   }
-  #Header {
-    height: 20rem;
-  }
-  #Header h1 {
-    font-size: 4rem;
-  }
-  #dogForm {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: flex-end;
-  }
-
-  /* Animated mobile menu */
   #linksContainer {
     max-height: 0;
     min-width: 100vw;
@@ -470,6 +516,8 @@ article img {
   #linksContainer ul {
     background-color: var(--originalGreen);
     transform: translateX(100vw);
+    border-top: 1px solid var(--alphaWhiteLight);
+    border-bottom: 1px solid var(--alphaWhiteLight);
   }
 }
 @keyframes hideContainer {
@@ -502,25 +550,16 @@ article img {
 
 
 @media (max-width: 480px) {
-  #Header {
-    height: 15rem;
-  }
-  #Header h1 {
-    font-size: 3rem;
-  }
   article img {
-    padding: 1rem 0;
+    padding: 2rem 0;
+  }
+  #logo span {
+    display: none;
   }
 }
 
 
 @media (max-width: 310px) {
-  #Header {
-    height: 12.5rem;
-  }
-  #Header h1 {
-    font-size: 2.5rem;
-  }
   .dogImg {
     width: 12rem;
   }
