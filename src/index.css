@@ -360,8 +360,8 @@ article img {
   margin: 2rem;
   opacity: 1;
   transition: opacity 0.5s;
-  outline: 0.2rem solid var(--originalGreen);
-  outline-offset: -0.2rem;
+  outline: 3px solid var(--originalGreen);
+  outline-offset: -3px;
 }
 .dogImg:hover {
   opacity: 0.7;
