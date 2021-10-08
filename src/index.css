@@ -298,10 +298,37 @@ article img {
   align-items: center;
   justify-content: center;
   background-color: var(--originalGreen);
+  transition: transform 0.5s;
+  position: relative;
+  overflow: hidden;
 }
-#madeWithArticle .iconImg {
+#madeWithArticle .iconCard span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.3rem;
+  background-color: hsla(120, 6%, 100%, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.5s;
+}
+#madeWithArticle .iconCard:hover {
+  transform: translateY(0.5rem);
+}
+#madeWithArticle .iconCard:hover span {
+  transform: translateY(0);
+}
+#madeWithArticle .iconCard .iconImg {
   width: 100%;
   padding: 1rem;
+  transition: transform 0.5s;
+}
+#madeWithArticle .iconCard:hover .iconImg {
+  transform: translateY(-0.5rem);
 }
 
 /* Dog API */

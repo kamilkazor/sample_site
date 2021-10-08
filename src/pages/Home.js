@@ -33,17 +33,21 @@ const Home = () => {
               <div className="row">
                 <div className="iconCard">
                   <img className="iconImg" src={htmlIcon} alt="html5 icon"/>
+                  <span>HTML 5</span>
                 </div>
                 <div className="iconCard">
                   <img className="iconImg" src={cssIcon} alt="css3 icon"/>
+                  <span>CSS 3</span>
                 </div>
               </div>
               <div className="row">
                 <div className="iconCard">
                   <img className="iconImg" src={jsIcon} alt="javascript icon"/>
+                  <span>JAVASCRIPT</span>
                 </div>
                 <div className="iconCard">
                   <img className="iconImg" src={reactIcon} alt="react-js icon"/>
+                  <span>REACT</span>
                 </div>
               </div>
           </div>
