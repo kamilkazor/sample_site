@@ -33,7 +33,8 @@ const Navbar = ({headerRef}) => {
       <div id="navContainer">
         <Link to="/">
           <div id="logo" onClick={() => {window.scrollTo(0, 0)}}>
-            <img src={logoIcon} alt="logo"/><span>Sample Site</span>
+            <img src={logoIcon} alt="logo"/>
+            <span>SSite</span>
           </div>
         </Link>
         <div onClick={burgerHandler} className={burgerOpen ? "menu open" : "menu"}>
