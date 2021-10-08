@@ -1,5 +1,3 @@
-import Row from "./Row";
-
 import { IconContext } from "react-icons";
 import { IoIosCall, IoIosMail } from "react-icons/io";
 
@@ -19,18 +17,18 @@ const Footer = () => {
           </div>
           <div className="contact">
             <h3>Contact:</h3>
-            <Row>
+            <div className="row">
               <IconContext.Provider value={{ color: "white", size:"2rem"}}>
                   <IoIosCall/>
               </IconContext.Provider>
               <p>+48 664 909 231</p>
-            </Row>
-            <Row>
+            </div>
+            <div className="row">
               <IconContext.Provider value={{ color: "white", size:"2rem"}}>
                 <IoIosMail/>
               </IconContext.Provider>
               <p>kkrk1994@gmail.com</p>
-            </Row>
+            </div>
           </div>
         </div>
       </div>
