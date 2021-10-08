@@ -342,6 +342,11 @@ article img {
   width: 15rem;
   height: auto;
   padding: 2rem;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.dogImg:hover {
+  opacity: 0.7;
 }
 .imgRow {
   display: flex;
