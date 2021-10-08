@@ -1,13 +1,13 @@
-const Link3 = () => {
+const Empty2 = () => {
   return (
     <div className="mainContainer">
       <main className="main">
         <article id="aboutArticle" className="row veryLightGreenBG">
-          link3
+          Empty2
         </article>
       </main>
     </div>
   )
 }
 
-export default Link3;
+export default Empty2;

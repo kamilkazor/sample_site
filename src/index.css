@@ -435,7 +435,7 @@ article img {
 
 
 /* Adding style for mobile devices */
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   #barContainer {
     flex: 1;
     display: flex;
