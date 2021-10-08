@@ -45,6 +45,8 @@ html, body {
   font-size: 5rem;
   padding: 1rem;
   border: 0.3rem dotted white;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* Sticky navbar */
@@ -150,6 +152,8 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
 }
 #logo img {
   height: calc(var(--navbarHeight) * 0.6);
