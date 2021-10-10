@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import store from "./redux/store";
+import { Provider } from "react-redux";
 
-function App() {
+
+
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import HallOfDogs from "./pages/HallOfDogs";
+import Empty1 from "./pages/Empty1";
+import Empty2 from "./pages/Empty2";
+
+const App = () => {
+  const headerRef = useRef();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+      <Router basename={process.env.PUBLIC_URL}>
+        <div className="App">
+          <Header headerRef={headerRef} />
+          <Navbar headerRef={headerRef} />
+          <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route path="/hall-of-dogs">
+              <HallOfDogs/>
+            </Route>
+            <Route path="/empty-1">
+              <Empty1/>
+            </Route>
+            <Route path="/empty-2">
+              <Empty2/>
+            </Route>
+          </Switch>
+          <Footer/>
+        </div>
+      </Router>
+    </Provider>
+  )
 }
+
 
 export default App;
