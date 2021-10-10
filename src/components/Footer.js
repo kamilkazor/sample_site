@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer id="Footer">
       <div className="footerContent">
-        <img className="githubQR" src={githubQR} alt="github QR Code"/>
+        <img id="githubQR" src={githubQR} alt="github QR Code"/>
         <div className="infoBox">
           <div>
             <h3>Site created by Kamil Kazor</h3>

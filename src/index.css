@@ -217,9 +217,8 @@ html, body {
   justify-content: flex-start;
   align-items: center;
 }
-.githubQR {
-  width: auto;
-  max-height: 15rem;
+#githubQR {
+  max-width: 15rem;
   margin: 0 2rem;
 }
 
@@ -563,9 +562,7 @@ article img {
   .dogImg {
     width: 12rem;
   }
-  .githubQR {
-    width: auto;
-    max-height: 15rem;
+  #githubQR {
     margin: 0;
   }
 }
